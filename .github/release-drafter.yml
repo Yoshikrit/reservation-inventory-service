@@ -19,3 +19,6 @@ version-resolver:
   default: patch
 
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+
+template: |
+  $CHANGES
