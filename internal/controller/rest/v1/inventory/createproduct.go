@@ -1,9 +1,9 @@
 package inventory
 
 import (
-	"inventory/internal/pkg/apperror"
+	"github.com/Yoshikrit/inventory/internal/pkg/apperror"
 
-	inventorySrv "inventory/internal/service/inventory"
+	inventorySrv "github.com/Yoshikrit/inventory/internal/service/inventory"
 
 	"github.com/gofiber/fiber/v3"
 )

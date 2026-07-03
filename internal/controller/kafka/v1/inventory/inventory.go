@@ -1,6 +1,6 @@
 package inventory
 
-import inventorySrv "inventory/internal/service/inventory"
+import inventorySrv "github.com/Yoshikrit/inventory/internal/service/inventory"
 
 type KafkaInventoryController struct {
 	inventoryService inventorySrv.InventoryService

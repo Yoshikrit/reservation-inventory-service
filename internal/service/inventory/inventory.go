@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"inventory/internal/pkg/apperror"
-	historyRepo "inventory/internal/repository/producthistory"
-	productRepo "inventory/internal/repository/product"
+	"github.com/Yoshikrit/inventory/internal/pkg/apperror"
+	historyRepo "github.com/Yoshikrit/inventory/internal/repository/producthistory"
+	productRepo "github.com/Yoshikrit/inventory/internal/repository/product"
 
 	"github.com/redis/go-redis/v9"
 )

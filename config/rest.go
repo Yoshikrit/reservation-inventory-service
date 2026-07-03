@@ -1,7 +1,7 @@
 package config
 
 import (
-	"inventory/internal/pkg/validator"
+	"github.com/Yoshikrit/inventory/internal/pkg/validator"
 
 	"github.com/bytedance/sonic"
 	"github.com/gofiber/fiber/v3"

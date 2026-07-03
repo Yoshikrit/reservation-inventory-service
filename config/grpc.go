@@ -1,7 +1,7 @@
 package config
 
 import (
-	"inventory/internal/controller/grpc/interceptor"
+	"github.com/Yoshikrit/inventory/internal/controller/grpc/interceptor"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"

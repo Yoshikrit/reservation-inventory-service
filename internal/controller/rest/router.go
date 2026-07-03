@@ -1,11 +1,11 @@
 package rest
 
 import (
-	"inventory/internal/controller/rest/middleware"
-	inventoryCtrl "inventory/internal/controller/rest/v1/inventory"
-	historyRepo "inventory/internal/repository/producthistory"
-	productRepo "inventory/internal/repository/product"
-	inventorySrv "inventory/internal/service/inventory"
+	"github.com/Yoshikrit/inventory/internal/controller/rest/middleware"
+	inventoryCtrl "github.com/Yoshikrit/inventory/internal/controller/rest/v1/inventory"
+	historyRepo "github.com/Yoshikrit/inventory/internal/repository/producthistory"
+	productRepo "github.com/Yoshikrit/inventory/internal/repository/product"
+	inventorySrv "github.com/Yoshikrit/inventory/internal/service/inventory"
 
 	gormtrm "github.com/avito-tech/go-transaction-manager/drivers/gorm/v2"
 	trm "github.com/avito-tech/go-transaction-manager/trm/v2/manager"

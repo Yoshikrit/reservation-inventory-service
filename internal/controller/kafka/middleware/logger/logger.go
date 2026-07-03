@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"inventory/internal/controller/kafka/middleware"
-	"inventory/internal/entity"
+	"github.com/Yoshikrit/inventory/internal/controller/kafka/middleware"
+	"github.com/Yoshikrit/inventory/internal/entity"
 
 	kafka "github.com/segmentio/kafka-go"
 	"github.com/rs/zerolog/log"

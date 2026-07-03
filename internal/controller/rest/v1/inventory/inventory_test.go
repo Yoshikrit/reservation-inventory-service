@@ -6,12 +6,12 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"inventory/config"
-	"inventory/internal/controller/rest"
-	ctrlRest "inventory/internal/controller/rest/v1/inventory"
-	"inventory/internal/pkg/apperror"
-	svc "inventory/internal/service/inventory"
-	svcMocks "inventory/internal/service/inventory/mocks"
+	"github.com/Yoshikrit/inventory/config"
+	"github.com/Yoshikrit/inventory/internal/controller/rest"
+	ctrlRest "github.com/Yoshikrit/inventory/internal/controller/rest/v1/inventory"
+	"github.com/Yoshikrit/inventory/internal/pkg/apperror"
+	svc "github.com/Yoshikrit/inventory/internal/service/inventory"
+	svcMocks "github.com/Yoshikrit/inventory/internal/service/inventory/mocks"
 
 	"github.com/gofiber/fiber/v3"
 	"github.com/stretchr/testify/assert"

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"inventory/internal/controller/kafka/middleware"
+	"github.com/Yoshikrit/inventory/internal/controller/kafka/middleware"
 
 	kafkago "github.com/segmentio/kafka-go"
 	"github.com/redis/go-redis/v9"

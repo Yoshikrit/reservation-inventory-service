@@ -1,13 +1,13 @@
 package kafka
 
 import (
-	"inventory/config"
-	"inventory/internal/controller/kafka/middleware"
-	kafkaidempotency "inventory/internal/controller/kafka/middleware/idempotency"
-	inventoryCtrl "inventory/internal/controller/kafka/v1/inventory"
-	historyRepo "inventory/internal/repository/producthistory"
-	productRepo "inventory/internal/repository/product"
-	inventorySrv "inventory/internal/service/inventory"
+	"github.com/Yoshikrit/inventory/config"
+	"github.com/Yoshikrit/inventory/internal/controller/kafka/middleware"
+	kafkaidempotency "github.com/Yoshikrit/inventory/internal/controller/kafka/middleware/idempotency"
+	inventoryCtrl "github.com/Yoshikrit/inventory/internal/controller/kafka/v1/inventory"
+	historyRepo "github.com/Yoshikrit/inventory/internal/repository/producthistory"
+	productRepo "github.com/Yoshikrit/inventory/internal/repository/product"
+	inventorySrv "github.com/Yoshikrit/inventory/internal/service/inventory"
 
 	gormtrm "github.com/avito-tech/go-transaction-manager/drivers/gorm/v2"
 	trm "github.com/avito-tech/go-transaction-manager/trm/v2/manager"

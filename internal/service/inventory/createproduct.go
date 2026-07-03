@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 
-	"inventory/internal/entity"
-	"inventory/internal/pkg/apperror"
-	"inventory/internal/service/constant"
+	"github.com/Yoshikrit/inventory/internal/entity"
+	"github.com/Yoshikrit/inventory/internal/pkg/apperror"
+	"github.com/Yoshikrit/inventory/internal/service/constant"
 
 	"github.com/rs/zerolog/log"
 )

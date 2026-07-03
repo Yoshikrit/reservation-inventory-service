@@ -3,8 +3,8 @@ package product
 import (
 	"context"
 
-	"inventory/internal/entity"
-	"inventory/internal/pkg/apperror"
+	"github.com/Yoshikrit/inventory/internal/entity"
+	"github.com/Yoshikrit/inventory/internal/pkg/apperror"
 
 	"gorm.io/gorm"
 )

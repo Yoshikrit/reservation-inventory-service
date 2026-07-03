@@ -3,8 +3,8 @@ package mocks
 import (
 	"context"
 
-	"inventory/internal/pkg/apperror"
-	svc "inventory/internal/service/inventory"
+	"github.com/Yoshikrit/inventory/internal/pkg/apperror"
+	svc "github.com/Yoshikrit/inventory/internal/service/inventory"
 
 	"github.com/stretchr/testify/mock"
 )

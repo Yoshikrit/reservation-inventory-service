@@ -1,12 +1,12 @@
 package middleware
 
 import (
-	"inventory/internal/controller/rest/middleware/cors"
-	"inventory/internal/controller/rest/middleware/helmet"
-	"inventory/internal/controller/rest/middleware/logger"
-	"inventory/internal/controller/rest/middleware/recover"
-	"inventory/internal/controller/rest/middleware/responsetime"
-	"inventory/internal/controller/rest/middleware/trace"
+	"github.com/Yoshikrit/inventory/internal/controller/rest/middleware/cors"
+	"github.com/Yoshikrit/inventory/internal/controller/rest/middleware/helmet"
+	"github.com/Yoshikrit/inventory/internal/controller/rest/middleware/logger"
+	"github.com/Yoshikrit/inventory/internal/controller/rest/middleware/recover"
+	"github.com/Yoshikrit/inventory/internal/controller/rest/middleware/responsetime"
+	"github.com/Yoshikrit/inventory/internal/controller/rest/middleware/trace"
 
 	"github.com/gofiber/fiber/v3"
 )

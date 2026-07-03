@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"inventory/internal/entity"
+	"github.com/Yoshikrit/inventory/internal/entity"
 
 	"github.com/gofiber/fiber/v3"
 )

@@ -3,10 +3,10 @@ package inventory
 import (
 	"context"
 
-	"inventory/internal/pkg/apperror"
-	"inventory/internal/pkg/validator"
-	"inventory/internal/pkg/json"
-	inventorySrv "inventory/internal/service/inventory"
+	"github.com/Yoshikrit/inventory/internal/pkg/apperror"
+	"github.com/Yoshikrit/inventory/internal/pkg/validator"
+	"github.com/Yoshikrit/inventory/internal/pkg/json"
+	inventorySrv "github.com/Yoshikrit/inventory/internal/service/inventory"
 
 	kafka "github.com/segmentio/kafka-go"
 )

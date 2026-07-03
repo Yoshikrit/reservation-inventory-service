@@ -3,8 +3,8 @@ package inventory
 import (
 	"context"
 
-	"inventory/internal/pkg/apperror"
-	"inventory/internal/pkg/json"
+	"github.com/Yoshikrit/inventory/internal/pkg/apperror"
+	"github.com/Yoshikrit/inventory/internal/pkg/json"
 
 	"github.com/redis/go-redis/v9"
 	"github.com/rs/zerolog/log"

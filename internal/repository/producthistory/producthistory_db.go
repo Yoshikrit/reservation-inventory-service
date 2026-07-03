@@ -3,8 +3,8 @@ package producthistory
 import (
 	"context"
 
-	"inventory/internal/entity"
-	"inventory/internal/pkg/apperror"
+	"github.com/Yoshikrit/inventory/internal/entity"
+	"github.com/Yoshikrit/inventory/internal/pkg/apperror"
 
 	gormtrm "github.com/avito-tech/go-transaction-manager/drivers/gorm/v2"
 )

@@ -4,11 +4,11 @@ import (
 	"context"
 	"sync"
 
-	"inventory/config"
-	"inventory/internal/controller/kafka/middleware"
-	kafkalogger "inventory/internal/controller/kafka/middleware/logger"
-	kafkarecovery "inventory/internal/controller/kafka/middleware/recovery"
-	kafkatrace "inventory/internal/controller/kafka/middleware/trace"
+	"github.com/Yoshikrit/inventory/config"
+	"github.com/Yoshikrit/inventory/internal/controller/kafka/middleware"
+	kafkalogger "github.com/Yoshikrit/inventory/internal/controller/kafka/middleware/logger"
+	kafkarecovery "github.com/Yoshikrit/inventory/internal/controller/kafka/middleware/recovery"
+	kafkatrace "github.com/Yoshikrit/inventory/internal/controller/kafka/middleware/trace"
 
 	"github.com/rs/zerolog/log"
 )

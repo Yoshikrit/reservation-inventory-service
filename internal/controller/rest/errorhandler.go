@@ -3,7 +3,7 @@ package rest
 import (
 	"errors"
 
-	"inventory/internal/pkg/apperror"
+	"github.com/Yoshikrit/inventory/internal/pkg/apperror"
 
 	"github.com/gofiber/fiber/v3"
 	"github.com/rs/zerolog/log"

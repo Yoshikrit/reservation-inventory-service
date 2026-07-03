@@ -1,7 +1,7 @@
 package inventory
 
 import (
-	inventorySrv "inventory/internal/service/inventory"
+	inventorySrv "github.com/Yoshikrit/inventory/internal/service/inventory"
 
 	"github.com/gofiber/fiber/v3"
 )

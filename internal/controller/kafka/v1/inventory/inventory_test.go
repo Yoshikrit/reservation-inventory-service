@@ -5,10 +5,10 @@ import (
 	"encoding/json"
 	"testing"
 
-	kafkaCtrl "inventory/internal/controller/kafka/v1/inventory"
-	"inventory/internal/pkg/apperror"
-	svc "inventory/internal/service/inventory"
-	svcMocks "inventory/internal/service/inventory/mocks"
+	kafkaCtrl "github.com/Yoshikrit/inventory/internal/controller/kafka/v1/inventory"
+	"github.com/Yoshikrit/inventory/internal/pkg/apperror"
+	svc "github.com/Yoshikrit/inventory/internal/service/inventory"
+	svcMocks "github.com/Yoshikrit/inventory/internal/service/inventory/mocks"
 
 	kafka "github.com/segmentio/kafka-go"
 	"github.com/stretchr/testify/assert"

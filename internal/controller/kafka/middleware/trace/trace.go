@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"inventory/internal/controller/kafka/middleware"
-	"inventory/internal/entity"
+	"github.com/Yoshikrit/inventory/internal/controller/kafka/middleware"
+	"github.com/Yoshikrit/inventory/internal/entity"
 
 	"github.com/google/uuid"
 	kafka "github.com/segmentio/kafka-go"

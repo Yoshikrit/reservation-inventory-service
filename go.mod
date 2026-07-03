@@ -1,4 +1,4 @@
-module inventory
+module github.com/Yoshikrit/inventory
 
 go 1.26.2
 

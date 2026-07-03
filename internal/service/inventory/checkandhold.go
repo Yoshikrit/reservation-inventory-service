@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 
-	"inventory/internal/entity"
-	"inventory/internal/pkg/apperror"
+	"github.com/Yoshikrit/inventory/internal/entity"
+	"github.com/Yoshikrit/inventory/internal/pkg/apperror"
 )
 
 func (s *inventoryService) CheckAndHold(ctx context.Context, req *CheckAndHoldRequest) (*CheckAndHoldResponse, *apperror.AppError) {

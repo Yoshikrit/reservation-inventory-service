@@ -1,7 +1,7 @@
 package config
 
 import (
-	"inventory/internal/entity"
+	"github.com/Yoshikrit/inventory/internal/entity"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

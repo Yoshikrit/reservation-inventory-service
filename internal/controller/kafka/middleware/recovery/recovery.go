@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"runtime/debug"
 
-	"inventory/internal/controller/kafka/middleware"
+	"github.com/Yoshikrit/inventory/internal/controller/kafka/middleware"
 
 	kafka "github.com/segmentio/kafka-go"
 	"github.com/rs/zerolog/log"

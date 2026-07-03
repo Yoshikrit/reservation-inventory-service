@@ -3,7 +3,7 @@ package grpcutil
 import (
 	"context"
 
-	"inventory/internal/entity"
+	"github.com/Yoshikrit/inventory/internal/entity"
 
 	"google.golang.org/grpc/metadata"
 )
