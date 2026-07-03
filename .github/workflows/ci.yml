@@ -18,6 +18,7 @@ jobs:
         uses: actions/setup-go@v6
         with:
           go-version: "1.26"
+          cache: true
 
       - name: Run go vet
         run: go vet ./...
@@ -38,6 +39,7 @@ jobs:
         uses: actions/setup-go@v6
         with:
           go-version: "1.26"
+          cache: true
 
       - name: Verify dependencies
         run: go mod verify
@@ -56,6 +58,7 @@ jobs:
         uses: actions/setup-go@v6
         with:
           go-version: "1.26"
+          cache: true
 
       - name: Show build version
         run: echo "ref=${{ github.ref_name }} sha=$(git rev-parse --short HEAD)"
