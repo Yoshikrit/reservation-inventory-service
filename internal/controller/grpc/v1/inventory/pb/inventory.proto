@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package inventory;
+
+import "buf/validate/validate.proto";
+
+option go_package = "inventory/internal/controller/grpc/v1/inventory/pb;pb";
+
+service InventoryService {
+  rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse);
+  rpc GetProducts(GetProductsRequest) returns (ProductListResponse);
+  rpc GetProductByID(GetProductByIDRequest) returns (ProductResponse);
+  rpc CheckAndHold(CheckAndHoldRequest) returns (CheckAndHoldResponse);
+}
+
+message CreateProductRequest {
+  string product_id  = 1 [(buf.validate.field).string.min_len = 1];
+  string name        = 2 [(buf.validate.field).string.min_len = 1];
+  string description = 3;
+  double price       = 4 [(buf.validate.field).double.gte = 0];
+  uint64 quantity    = 5 [(buf.validate.field).uint64.gt = 0];
+}
+
+message CreateProductResponse {}
+
+message GetProductsRequest {}
+
+message GetProductByIDRequest {
+  string product_id = 1 [(buf.validate.field).string.min_len = 1];
+}
+
+message ProductResponse {
+  string product_id  = 1;
+  string name        = 2;
+  string description = 3;
+  double price       = 4;
+  uint64 quantity    = 5;
+}
+
+message ProductListResponse {
+  repeated ProductResponse products = 1;
+}
+
+message CheckAndHoldRequest {
+  string product_id = 1 [(buf.validate.field).string.min_len = 1];
+  uint64 quantity   = 2 [(buf.validate.field).uint64.gt = 0];
+}
+
+message CheckAndHoldResponse {
+  bool            available = 1;
+  ProductResponse product   = 2;
+}

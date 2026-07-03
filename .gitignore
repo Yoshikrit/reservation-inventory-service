@@ -1,8 +1,8 @@
 # Binaries
 bin/
-api
-grpc
-consumer
+/api
+/grpc
+/consumer
 *.exe
 *.out
 
