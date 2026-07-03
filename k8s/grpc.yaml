@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventory-grpc
+  namespace: inventory
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inventory-grpc
+  template:
+    metadata:
+      labels:
+        app: inventory-grpc
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - name: grpc
+          image: inventory:latest
+          imagePullPolicy: IfNotPresent
+          command: ["./grpc"]
+          ports:
+            - containerPort: 50051
+          envFrom:
+            - configMapRef:
+                name: inventory-config
+            - secretRef:
+                name: inventory-secret
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+              ephemeral-storage: 50Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
+              ephemeral-storage: 100Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: inventory-grpc
+  namespace: inventory
+spec:
+  type: ClusterIP
+  selector:
+    app: inventory-grpc
+  ports:
+    - port: 50051
+      targetPort: 50051

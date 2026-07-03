@@ -1,0 +1,34 @@
+# Binaries
+bin/
+api
+grpc
+consumer
+*.exe
+*.out
+
+# Go
+vendor/
+*.test
+*.prof
+coverage.out
+tmp/
+
+# Proto generated (keep pb.go committed, or delete this comment to generate on CI)
+# internal/controller/grpc/v1/inventory/pb/*.pb.go
+
+# Env
+.env
+.env.*
+
+# IDE / local tooling
+.idea/
+.vscode/
+.claude/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
