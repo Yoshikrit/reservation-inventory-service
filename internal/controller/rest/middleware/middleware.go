@@ -4,6 +4,7 @@ import (
 	"github.com/Yoshikrit/inventory/internal/controller/rest/middleware/cors"
 	"github.com/Yoshikrit/inventory/internal/controller/rest/middleware/helmet"
 	"github.com/Yoshikrit/inventory/internal/controller/rest/middleware/logger"
+	"github.com/Yoshikrit/inventory/internal/controller/rest/middleware/metrics"
 	"github.com/Yoshikrit/inventory/internal/controller/rest/middleware/recover"
 	"github.com/Yoshikrit/inventory/internal/controller/rest/middleware/responsetime"
 	"github.com/Yoshikrit/inventory/internal/controller/rest/middleware/trace"
@@ -19,5 +20,6 @@ func NewMiddleware() []fiber.Handler {
 		responsetime.ResponseTime(),
 		helmet.Helmet(),
 		trace.Trace(),
+		metrics.Metrics(),
 	}
 }

@@ -21,6 +21,7 @@ func NewRestRouter(router *fiber.App, db *gorm.DB, rdb *redis.Client) {
 	}
 
 	newHealthRouter(router, db)
+	newMetricsRouter(router)
 
 	v1 := router.Group("/api/v1")
 	newRoute(v1, db, rdb)
