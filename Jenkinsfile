@@ -2,9 +2,10 @@ pipeline {
     agent none
 
     environment {
-        IMAGE    = "ghcr.io/yoshikrit/inventory"
-        GOPATH   = "/tmp/go"
-        GOCACHE  = "/tmp/go-cache"
+        IMAGE              = "ghcr.io/yoshikrit/inventory"
+        GOPATH             = "/tmp/go"
+        GOCACHE            = "/tmp/go-cache"
+        STATICCHECK_CACHE  = "/tmp/staticcheck-cache"
     }
 
     stages {
