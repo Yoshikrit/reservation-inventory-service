@@ -13,7 +13,7 @@ pipeline {
             steps {
                 sh 'go vet ./...'
                 sh 'go install honnef.co/go/tools/cmd/staticcheck@latest'
-                sh 'staticcheck ./...'
+                sh '$GOPATH/bin/staticcheck ./...'
             }
         }
 
