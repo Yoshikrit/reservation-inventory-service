@@ -10,6 +10,7 @@ import (
 	"github.com/Yoshikrit/inventory/config"
 	kafka "github.com/Yoshikrit/inventory/internal/controller/kafka"
 	"github.com/Yoshikrit/inventory/internal/pkg/logger"
+	"github.com/Yoshikrit/inventory/internal/pkg/telemetry"
 )
 
 func main() {
@@ -30,6 +31,13 @@ func main() {
 	}
 
 	redis := config.InitRedis(cfg.RedisConfig)
+
+	shutdown, err := telemetry.Init(context.Background(), cfg.TelemetryConfig.OtelServiceName, cfg.TelemetryConfig.OtelEndpoint)
+	if err != nil {
+		log.Warn().Err(err).Msg("inventory-consumer: telemetry init failed, continuing without tracing")
+	} else {
+		defer shutdown(context.Background())
+	}
 
 	ctx, cancel := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
 	defer cancel()

@@ -7,6 +7,7 @@ import (
 	"github.com/Yoshikrit/inventory/config"
 	"github.com/Yoshikrit/inventory/internal/controller/kafka/middleware"
 	kafkalogger "github.com/Yoshikrit/inventory/internal/controller/kafka/middleware/logger"
+	kafkaotel "github.com/Yoshikrit/inventory/internal/controller/kafka/middleware/otel"
 	kafkarecovery "github.com/Yoshikrit/inventory/internal/controller/kafka/middleware/recovery"
 	kafkatrace "github.com/Yoshikrit/inventory/internal/controller/kafka/middleware/trace"
 
@@ -32,6 +33,7 @@ func startConsumer(ctx context.Context, cfg config.KafkaConfig, c consumerConfig
 	handler := middleware.Chain(
 		c.handler,
 		kafkarecovery.Recovery(),
+		kafkaotel.OtelTrace(),
 		kafkatrace.Trace(),
 		kafkalogger.Logger(),
 	)

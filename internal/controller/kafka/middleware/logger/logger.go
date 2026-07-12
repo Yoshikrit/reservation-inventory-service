@@ -9,6 +9,7 @@ import (
 
 	kafka "github.com/segmentio/kafka-go"
 	"github.com/rs/zerolog/log"
+	"go.opentelemetry.io/otel/trace"
 )
 
 func Logger() middleware.Middleware {
@@ -17,28 +18,29 @@ func Logger() middleware.Middleware {
 			start := time.Now()
 			err := next(ctx, msg)
 			duration := time.Since(start)
-			traceID, _ := ctx.Value(entity.ContextKeyTraceID).(string)
+			requestID, _ := ctx.Value(entity.ContextKeyTraceID).(string)
 
+			e := log.Info()
 			if err != nil {
-				log.Error().
-					Str("topic", msg.Topic).
-					Int64("offset", msg.Offset).
-					Int("partition", msg.Partition).
-					Str("requestId", traceID).
-					Dur("duration", duration).
-					Str("error", err.Error()).
-					Msg("Kafka")
-				return err
+				e = log.Error().Err(err)
 			}
 
-			log.Info().
+			e = e.
 				Str("topic", msg.Topic).
 				Int64("offset", msg.Offset).
 				Int("partition", msg.Partition).
-				Str("requestId", traceID).
-				Dur("duration", duration).
-				Msg("Kafka")
-			return nil
+				Str("requestId", requestID).
+				Dur("duration", duration)
+
+			span := trace.SpanFromContext(ctx)
+			if span.SpanContext().IsValid() {
+				e = e.
+					Str("traceId", span.SpanContext().TraceID().String()).
+					Str("spanId", span.SpanContext().SpanID().String())
+			}
+
+			e.Msg("Kafka")
+			return err
 		}
 	}
 }
