@@ -6,11 +6,12 @@ import (
 )
 
 type Config struct {
-	RestConfig     RestConfig
-	DatabaseConfig DatabaseConfig
-	RedisConfig    RedisConfig
-	GrpcConfig     GrpcConfig
-	KafkaConfig    KafkaConfig
+	RestConfig       RestConfig
+	DatabaseConfig   DatabaseConfig
+	RedisConfig      RedisConfig
+	GrpcConfig       GrpcConfig
+	KafkaConfig      KafkaConfig
+	TelemetryConfig  TelemetryConfig
 }
 
 func Load() (Config, error) {

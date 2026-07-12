@@ -13,6 +13,7 @@ import (
 	"github.com/Yoshikrit/inventory/config"
 	"github.com/Yoshikrit/inventory/internal/controller/rest"
 	"github.com/Yoshikrit/inventory/internal/pkg/logger"
+	"github.com/Yoshikrit/inventory/internal/pkg/telemetry"
 )
 
 func main() {
@@ -33,6 +34,13 @@ func main() {
 
 	if err := config.MigrateDatabase(db); err != nil {
 		log.Fatal().Err(err).Msg("inventory-api: failed to migrate database")
+	}
+
+	shutdown, err := telemetry.Init(context.Background(), cfg.TelemetryConfig.OtelServiceName, cfg.TelemetryConfig.OtelEndpoint)
+	if err != nil {
+		log.Warn().Err(err).Msg("inventory-api: telemetry init failed, continuing without tracing")
+	} else {
+		defer shutdown(context.Background())
 	}
 
 	app := fiber.New(config.NewRestConfig(rest.ErrorHandler()))
