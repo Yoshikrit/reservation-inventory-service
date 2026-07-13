@@ -11,3 +11,4 @@ data:
   KAFKA_BROKERS: "kafka:9092"
   KAFKA_TOPIC_CONFIRMED_RESERVATION: "reservation-confirmed"
   KAFKA_GROUP_INVENTORY_CONFIRMED_RESERVATION: "inventory-group"
+  OTEL_ENDPOINT: "tempo.monitoring.svc.cluster.local:4317"

@@ -14,11 +14,16 @@ spec:
         app: inventory-consumer
     spec:
       automountServiceAccountToken: false
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: consumer
-          image: inventory:latest
-          imagePullPolicy: IfNotPresent
+          image: ghcr.io/yoshikrit/reservation-inventory-service:1
+          imagePullPolicy: Always
           command: ["./consumer"]
+          env:
+            - name: OTEL_SERVICE_NAME
+              value: "inventory-consumer"
           envFrom:
             - configMapRef:
                 name: inventory-config

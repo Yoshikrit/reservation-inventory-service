@@ -14,13 +14,18 @@ spec:
         app: inventory-grpc
     spec:
       automountServiceAccountToken: false
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: grpc
-          image: inventory:latest
-          imagePullPolicy: IfNotPresent
+          image: ghcr.io/yoshikrit/reservation-inventory-service:1
+          imagePullPolicy: Always
           command: ["./grpc"]
           ports:
             - containerPort: 50051
+          env:
+            - name: OTEL_SERVICE_NAME
+              value: "inventory-grpc"
           envFrom:
             - configMapRef:
                 name: inventory-config
