@@ -19,7 +19,7 @@ spec:
       containers:
         - name: api
           image: ghcr.io/yoshikrit/inventory:1
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           command: ["./api"]
           ports:
             - containerPort: 8080
