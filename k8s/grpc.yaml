@@ -18,7 +18,7 @@ spec:
         - name: ghcr-secret
       containers:
         - name: grpc
-          image: ghcr.io/yoshikrit/reservation-inventory-service:1
+          image: ghcr.io/yoshikrit/inventory:1
           imagePullPolicy: Always
           command: ["./grpc"]
           ports:
