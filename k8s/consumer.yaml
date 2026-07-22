@@ -38,3 +38,5 @@ spec:
               cpu: 100m
               memory: 64Mi
               ephemeral-storage: 100Mi
+          # No probe: consumer exposes no port. k8s restarts on process exit (at-least-once delivery via Kafka offsets).
+          # To add a real liveness probe, expose a /livez HTTP port from the consumer process.

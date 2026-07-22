@@ -31,6 +31,16 @@ spec:
                 name: inventory-config
             - secretRef:
                 name: inventory-secret
+          readinessProbe:
+            tcpSocket:
+              port: 50051
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: 50051
+            initialDelaySeconds: 10
+            periodSeconds: 15
           resources:
             requests:
               cpu: 50m
